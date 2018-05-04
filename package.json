@@ -1,0 +1,22 @@
+{
+  "name": "noeditor",
+  "version": "1.0.0",
+  "description": "code editor for ice",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MU001999/noeditor.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MU001999/noeditor/issues"
+  },
+  "homepage": "https://github.com/MU001999/noeditor#readme",
+  "devDependencies": {
+    "electron": "^2.0.0"
+  }
+}
