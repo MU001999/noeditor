@@ -14,6 +14,10 @@
     }
 
     #codeEditor {
+        background-color: rgba(0, 0, 0, 0);
+        color: rgba(0, 0, 0, 0.6);
+        position: absolute;
+        z-index: 100;
         width: 100%;
         height: 99.535%;
         resize: none;
@@ -22,29 +26,35 @@
         border: 0px;
         font-size: 16px;
         font-family: consolas;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        -webkit-user-modify: read-write-plaintext-only;
+        outline: 0;
+    }
+
+    #previewDiv {
+        position: absolute;
+        z-index: 10;
+        width: 100%;
+        height: 99.535%;
+        resize: none;
+        padding: 0px;
+        margin: 0px;
+        border: 0px;
+        font-size: 16px;
+        font-family: consolas;
+        white-space: nowrap;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        -webkit-user-modify: read-write-plaintext-only;
+        outline: 0;
     }
 </style>
 
 <body>
-    <textarea id="codeEditor" onkeydown="run(event)"></textarea>
+    <pre id="codeEditor" contenteditable="true" onkeyup="run(event)"></pre>
+    <div id="previewDiv"></div>
 
     <script>
-        var fs = require('fs');
-        document.addEventListener('drop', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            for (let f of e.dataTransfer.files) {
-                console.log('File(s) you dragged here: ', f.path)
-                fs.readFile(f.path, 'utf8', function (err, data){
-                    document.getElementById('codeEditor').value = data;
-                });
-            }
-        });
-        document.addEventListener('dragover', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-        });
+        
     </script>
 </body>
 
