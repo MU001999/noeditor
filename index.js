@@ -273,6 +273,7 @@ function scan(text) {
                         case "continue":
                         case "return":
                         case "new":
+                        case "none":
                         case "true":
                         case "false":
                         case "and":
