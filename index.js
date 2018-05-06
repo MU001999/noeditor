@@ -272,10 +272,14 @@ function scan(text) {
                         case "break":
                         case "continue":
                         case "return":
+                        case "match":
+
                         case "new":
+
                         case "none":
                         case "true":
                         case "false":
+
                         case "and":
                         case "or":
                         case "not":
